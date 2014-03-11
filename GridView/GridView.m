@@ -17,7 +17,7 @@
 {
     UIScrollView *_scrollView;
     
-    int _numberOfCells;
+    NSInteger _numberOfCells;
     
     NSMutableArray *cellsViews;
 }

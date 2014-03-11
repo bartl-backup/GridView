@@ -20,15 +20,15 @@
 
 @property (nonatomic, readonly) GridView *gridView;
 
-@property (nonatomic) int itemsCount;
+@property (nonatomic) NSUInteger itemsCount;
 
--(GridViewCell*)gridCellMaker:(int)index fromList:(NSArray*)list;
+-(GridViewCell*)gridCellMaker:(NSInteger)index fromList:(NSArray*)list;
 -(UITableViewCell*)searchCellFor:(NSIndexPath*)indexPath from:(NSArray*)items inTable:(UITableView*)tableView;
 
 -(NSArray*)itemsList;
 -(NSArray*)searchItems:(NSString*)searchString;
 
--(void)itemSelected:(int)index fromList:(NSArray*)items;
+-(void)itemSelected:(NSInteger)index fromList:(NSArray*)items;
 
 -(void)reloadData;
 

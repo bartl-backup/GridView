@@ -87,7 +87,7 @@
 
 #pragma mark - Overload
 
--(GridViewCell*)gridCellMaker:(int)index fromList:(NSArray*)list
+-(GridViewCell*)gridCellMaker:(NSInteger)index fromList:(NSArray*)list
 {
     return nil;
 }
@@ -107,19 +107,19 @@
     return nil;
 }
 
--(void)itemSelected:(int)index fromList:(NSArray*)items
+-(void)itemSelected:(NSInteger)index fromList:(NSArray*)items
 {
     
 }
 
 #pragma mark - TableViewDelegate
 
--(int)numberOfSectionsInTableView:(UITableView *)tableView
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
 }
 
--(int)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return searchResult.count;
 }
@@ -165,17 +165,17 @@
 
 #pragma mark - GridView
 
--(int)numberOfCellsInGrid:(GridView *)gridView
+-(NSInteger)numberOfCellsInGrid:(GridView *)gridView
 {
     return self.itemsCount;
 }
 
--(GridViewCell*)gridView:(GridView *)gridView cellForIndex:(int)index
+-(GridViewCell*)gridView:(GridView *)gridView cellForIndex:(NSInteger)index
 {
     return [self gridCellMaker:index fromList:[self itemsList]];
 }
 
--(void)gridView:(GridView *)gridView didSelectCellAtIndex:(int)index
+-(void)gridView:(GridView *)gridView didSelectCellAtIndex:(NSInteger)index
 {
     [self itemSelected:index fromList:[self itemsList]];
 }

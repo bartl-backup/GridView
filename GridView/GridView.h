@@ -13,18 +13,18 @@
 @class GridView;
 
 @protocol GridViewDataSource <NSObject>
--(int)numberOfCellsInGrid:(GridView*)gridView;
--(GridViewCell*)gridView:(GridView*)gridView cellForIndex:(int)index;
+-(NSInteger)numberOfCellsInGrid:(GridView*)gridView;
+-(GridViewCell*)gridView:(GridView*)gridView cellForIndex:(NSInteger)index;
 @end
 
 @protocol GridViewDelegate <NSObject>
 @optional
--(void)gridView:(GridView*)gridView didSelectCellAtIndex:(int)index;
--(void)gridView:(GridView *)gridView didDoubleTapCellAtIndex:(int)index;
+-(void)gridView:(GridView*)gridView didSelectCellAtIndex:(NSInteger)index;
+-(void)gridView:(GridView *)gridView didDoubleTapCellAtIndex:(NSInteger)index;
 @end
 
 @interface GridView : UIView
-@property (nonatomic) float cellMargin;
+@property (nonatomic) CGFloat cellMargin;
 
 @property (nonatomic) CGSize cellSize;
 
