@@ -21,7 +21,7 @@
 
 @property (nonatomic,weak) id<GridCellDelegate> delegate;
 
-@property (nonatomic) int index;
+@property (nonatomic) NSInteger index;
 @property (nonatomic,weak) GridView *gridView;
 
 -(void)longPress;

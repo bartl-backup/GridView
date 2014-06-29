@@ -182,7 +182,7 @@
 
 #pragma mark - Properties
 
--(void)setGridItemsCount:(int)gridItemsCount
+-(void)setGridItemsCount:(NSInteger)gridItemsCount
 {
     _gridItemsCount = gridItemsCount;
     [self.gridView reloadData];

@@ -77,7 +77,7 @@
     
     cellsViews = [NSMutableArray array];
     
-    for (int i = 0; i<_numberOfCells; i++)
+    for (NSInteger i = 0; i<_numberOfCells; i++)
     {
         GridViewCell *view = [_dataSource gridView:self cellForIndex:i];
         view.index = i;
@@ -98,23 +98,23 @@
     CGSize cellBounds = self.cellSize;
     CGSize gridBounds = self.bounds.size;    
     
-    int cellsPerRow    = (gridBounds.width-self.cellMargin) / (cellBounds.width + self.cellMargin);
-    int numberOfRows = (int)ceil((float)_numberOfCells / (float)cellsPerRow);
+    NSInteger cellsPerRow    = (gridBounds.width-self.cellMargin) / (cellBounds.width + self.cellMargin);
+    NSInteger numberOfRows = (NSInteger)ceil((CGFloat)_numberOfCells / (CGFloat)cellsPerRow);
     
-    float actualMarginX = (gridBounds.width - cellsPerRow*cellBounds.width) / (cellsPerRow+1);
-    float actualMarginY = self.cellMargin;
+    CGFloat actualMarginX = (gridBounds.width - cellsPerRow*cellBounds.width) / (cellsPerRow+1);
+    CGFloat actualMarginY = self.cellMargin;
     
     _scrollView.frame = CGRectMake(0, 0, gridBounds.width, gridBounds.height);
     CGSize contentSize = CGSizeMake(gridBounds.width, numberOfRows * (cellBounds.height+actualMarginY)+actualMarginY);
     _scrollView.contentSize = contentSize;
     
-    for (int i=0; i<_numberOfCells; i++)
+    for (NSInteger i=0; i<_numberOfCells; i++)
     {
         CGRect cellFrame;
         cellFrame.size = cellBounds;
         
-        int row    = i / cellsPerRow;
-        int column = i % cellsPerRow;
+        NSInteger row    = i / cellsPerRow;
+        NSInteger column = i % cellsPerRow;
         
         cellFrame.origin = CGPointMake(actualMarginX + (actualMarginX + cellBounds.width) * column , 
                                        actualMarginY + (actualMarginY + cellBounds.height) * row);        
